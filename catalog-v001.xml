@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/time#2016" uri="CoreOntologies/time.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/seas/SystemOntology-1.1" uri="CoreOntologies/SystemOntology-1.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/nemo/gufo#/1.0.0" uri="CoreOntologies/gufo.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql" uri="CoreOntologies/geosparql_vocab_all.rdf"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/seas/SystemOntology-1.1" uri="Core%20Ontologies/SystemOntology-1.1.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/time#2016" uri="Core%20Ontologies/time.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql" uri="Core%20Ontologies/geosparql_vocab_all.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/nemo/gufo#/1.0.0" uri="Core%20Ontologies/gufo.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/time#2016" uri="file:/home/alencga1/Téléchargements/Ontology/Base%20Ontologies/OWLTime/time.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql" uri="file:/home/alencga1/Documents/PreDiViD/git/predivid/code/Ontology/BaseOntologies/ogc-geosparql/Opengis/geosparql-1_0_1/geosparql/1.0.1/geosparql_vocab_all.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://ontology.eil.utoronto.ca/icity/Time/1.1/" uri="file:/home/alencga1/Documents/PreDiViD/git/predivid/code/Ontology/BaseOntologies/OWLTime/ontology.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/nemo/gufo#/1.0.0" uri="file:/home/alencga1/Documents/PreDiViD/git/predivid/code/Ontology/BaseOntologies/gufo/gufo.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/nemo/gufo#/1.0.0" uri="file:/home/alencga1/Documents/PreDiViD/git/predivid/code/Ontology/BaseOntologies/gufo/gufo.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1700906336630" name="http://www.opengis.net/ont/geosparql" uri="CoreOntologies/geosparql_vocab_all.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1700906336630" name="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/" uri="CoreOntologies/PhenOWL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1700906336630" name="https://w3id.org/def/phenowl/" uri="PhenOWL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1700906336630" name="duplicate:https://w3id.org/seas/FeatureOfInterestOntology" uri="CoreOntologies/evaluationontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1700906336630" name="duplicate:https://w3id.org/seas/FeatureOfInterestOntology" uri="CoreOntologies/featureofinterestontology.owl"/>
+    </group>
+</catalog>
