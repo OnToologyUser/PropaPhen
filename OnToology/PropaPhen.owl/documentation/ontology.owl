@@ -18,6 +18,7 @@
      xmlns:schema="https://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/def/propaphen">
         <owl:versionIRI rdf:resource="https://w3id.org/def/propaphen/1.0.0"/>
+        <owl:imports rdf:resource="http://purl.org/nemo/gufo#/1.0.0"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/sf"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
@@ -25,15 +26,16 @@
         <dc:creator>Alencar Medeiros, Gabriel H.</dc:creator>
         <dc:creator>Soualmia, Lina F.</dc:creator>
         <dc:creator>Zanni-Merk, Cecilia</dc:creator>
-        <dc:description>An RDF/OWL vocabulary for representing propagation phenomenona</dc:description>
         <dc:title>PropaPhen : Core Propagation Phenomenon Ontology</dc:title>
-        <terms:contributor>Alencar Medeiros, Gabriel H.</terms:contributor>
-        <terms:created>Wed Nov 22nd, 2023</terms:created>
+        <terms:contributor>mailto:gabriel-henrique.alencar-medeiros@univ-rouen.fr</terms:contributor>
+        <terms:created>Wed November 22, 2023</terms:created>
+        <terms:creator rdf:resource="https://orcid.org/0000-0002-4594-5492"/>
         <terms:license>https://opensource.org/license/mit/</terms:license>
-        <terms:modified>Wed Nov 25nd, 2023</terms:modified>
+        <terms:modified>Wed November 28, 2023</terms:modified>
         <vann:preferredNamespacePrefix>propaphen</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/def/propaphen</vann:preferredNamespaceUri>
         <rdfs:comment>The Core Propagation Phenomenon Ontology (PropaPhen) is designed to represent the propagation of any phenomenon in a network, leveraging the spatiotemporal characteristics of propagation from different observation points, with the participation of multiple entities in the process. This ontology will be used in the future in a broader framework for describing, detecting, and predicting the spread of health risks in a network based on heterogeneous textual data.</rdfs:comment>
+        <owl:priorVersion>1.0.0</owl:priorVersion>
         <owl:versionInfo>1.0.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -2857,6 +2859,7 @@ I.e. A phen:PhenomenonOccurence &quot;Occurence of a Hurricane in Paris&quot; is
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/propaphen#hasPresence">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/propaphen#presenceOf"/>
         <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Entity"/>
         <rdfs:range rdf:resource="https://w3id.org/def/propaphen#Presence"/>
         <rdfs:comment>Relates an instance of gufo:Individual/entity to its spatiotemporal presence.</rdfs:comment>
@@ -2932,6 +2935,18 @@ I.e. From the same phen:PhenomenonOccurrence &quot;Hurricane in France on 2019&q
 
 I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&quot; gufo:Indifiduals were present (phen:Presence) on december of 2020 in the phen:Observation &quot;Spread of COVID-19 in Paris on december of 2020&quot;.</rdfs:comment>
         <rdfs:label>Observational Presence In</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/def/propaphen#presenceOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/propaphen#presenceOf">
+        <rdfs:domain rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Entity"/>
+        <rdfs:comment>Presence Of</rdfs:comment>
+        <rdfs:comment>Relates an instance of propaphe:Presence with the Individual/entity spatiotemporally present.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -6400,7 +6415,26 @@ It is deprecated in this edition of OWL-Time. </skos:historyNote>
 
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#Observation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#observationOf"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>As a propagation phenomenon is still a general phenomenon (&quot;
             Smith, David Woodruff. « Phenomenology ». The Stanford Encyclopedia of Philosophy, édité par Edward N. Zalta, Summer 2018, Metaphysics Research Lab, Stanford University, 2018. Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/archives/sum2018/entries/phenomenology/.
             &quot;), different points of view or observations may result in different experiences. A phen:Observation is a gufo:Perdurant that represents a spatial-temporal perspective of a phen:PhenomenonOccurrence (i.e., two observations from different people may differ in the number of details one can give).
@@ -6417,7 +6451,22 @@ It is deprecated in this edition of OWL-Time. </skos:historyNote>
 
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#Phenomenon">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>It is based on the meaning of the Propagation Phenomenon presented by &quot;Król, Dariusz, Damien Fay, et Bogdan Gabryś, éd. Propagation Phenomena in Real World Networks. Vol. 85. Intelligent Systems Reference Library. Cham: Springer International Publishing, 2015. https://doi.org/10.1007/978-3-319-15916-4.&quot;
         A phenomenon is a gufo:Perdurant that defines a fact or event of scientific interest susceptible to scientific description and explanation (Merriam-Webster dictionary). It does not define the occurrence of a phenomenon but the study of a type of it (i.e., Epidemic phenomena such as COVID-19, Influenza, etc.). As the mentioned phenomena, the study of a phenomenon may only be valid from the first occurrence of it until the last occurrence of it.</rdfs:comment>
         <rdfs:label>Propagation Phenomenon Type</rdfs:label>
@@ -6429,7 +6478,27 @@ It is deprecated in this edition of OWL-Time. </skos:historyNote>
 
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#PhenomenonOccurrence">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#fromPhenomenon"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>A gufo:Perdurant that represents the occurrence of a phen:Phenomenon. Similar to the concept of the occurrence of information being propagated in the social information propagation phenomenon on &quot;Król, Dariusz, Damien Fay, et Bogdan Gabryś, éd. Propagation Phenomena in Real World Networks. Vol. 85. Intelligent Systems Reference Library. Cham: Springer International Publishing, 2015. https://doi.org/10.1007/978-3-319-15916-4.&quot;. Another example would be an outburst in a network from a particular virus type.
 
         For example, the occurrence of a hurricane in Paris is different from the occurrence of a hurricane in the United States if they are happening simultaneously. Therefore, they are two different instances of phen:PhenomenonOccurrence of the same phen:Phenomenon (Hurricane).</rdfs:comment>
@@ -6442,7 +6511,30 @@ It is deprecated in this edition of OWL-Time. </skos:historyNote>
 
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#Presence">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#observationalPresenceIn"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#presenceOf"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/nemo/gufo#Entity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment>A gufo:Perdurant whose sole purpose is to identify the presence of instances of gufo:Individual in a node of the network or, consequently, in a phen:Observation for a given time interval.</rdfs:comment>
         <rdfs:label>Presence of entities in a network node</rdfs:label>
     </owl:Class>
@@ -7073,11 +7165,69 @@ Figure below illustrates systems and their connections:
         <skos:prefLabel xml:lang="ja">一年</skos:prefLabel>
         <skos:prefLabel xml:lang="zh">一年</skos:prefLabel>
     </owl:NamedIndividual>
-    <rdf:Description>
-        <xsd:pattern>---(0[1-9]|[1-9][0-9])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</xsd:pattern>
-    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/def/propaphen#t1 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#t1">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/propaphen#t2 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#t2">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/propaphen#t3 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#t3">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:after rdf:resource="https://w3id.org/def/propaphen#t1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/propaphen#t4 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#t4">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/propaphen#ti1 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#ti1">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <time:hasBeginning rdf:resource="https://w3id.org/def/propaphen#t1"/>
+        <time:intervalContains rdf:resource="https://w3id.org/def/propaphen#ti2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/def/propaphen#ti2 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#ti2">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <time:hasEnd rdf:resource="https://w3id.org/def/propaphen#t4"/>
+    </owl:NamedIndividual>
     <rdf:Description>
         <xsd:pattern>--(0[1-9]|1[0-9]|20)(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</xsd:pattern>
+    </rdf:Description>
+    <rdf:Description>
+        <xsd:pattern>---(0[1-9]|[1-9][0-9])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</xsd:pattern>
     </rdf:Description>
     <rdf:Description>
         <xsd:pattern>-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?</xsd:pattern>
@@ -7126,15 +7276,6 @@ Figure below illustrates systems and their connections:
             <rdf:Description rdf:about="http://purl.org/nemo/gufo#Endurant"/>
             <rdf:Description rdf:about="http://purl.org/nemo/gufo#Event"/>
             <rdf:Description rdf:about="http://purl.org/nemo/gufo#Situation"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#Observation"/>
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#Phenomenon"/>
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#Presence"/>
         </owl:members>
     </rdf:Description>
     

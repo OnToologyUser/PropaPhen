@@ -5,7 +5,7 @@
    <key for="edge" id="d2" yfiles.type="edgegraphics" />
    <key attr.name="description" attr.type="string" for="edge" id="d3" />
    <key for="graphml" id="d4" yfiles.type="resources" />
-   <graph edgedefault="directed" id="G" parse.edges="186" parse.nodes="179" parse.order="free">
+   <graph edgedefault="directed" id="G" parse.edges="199" parse.nodes="189" parse.order="free">
       <node id="nid_time:Year">
          <data key="d0">
             <y:ShapeNode>
@@ -41,31 +41,54 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:QualityValue">
+      <node id="nid_gufo@en:QualityValue">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="200.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:QualityValue</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:QualityValue</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:AbstractEntity">
+      <node id="nid_gufo@en:AbstractEntity">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="190.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="220.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:AbstractEntity</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:AbstractEntity</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf1" source="nid_gufo:QualityValue" target="nid_gufo:AbstractEntity">
+    <edge id="eid_rdfs:subClassOf1" source="nid_gufo@en:QualityValue" target="nid_gufo@en:AbstractEntity">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:AbstractIndividual">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:AbstractIndividual</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf2" source="nid_gufo@en:QualityValue" target="nid_gufo@en:AbstractIndividual">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -88,7 +111,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf2" source="nid_time:Instant" target="nid_gufo:AbstractEntity">
+    <edge id="eid_rdfs:subClassOf3" source="nid_time:Instant" target="nid_gufo@en:AbstractEntity">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -111,7 +134,18 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf3" source="nid_time:Instant" target="nid_time:TemporalEntity">
+    <edge id="eid_rdfs:subClassOf4" source="nid_time:Instant" target="nid_time:TemporalEntity">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf5" source="nid_time:Instant" target="nid_gufo@en:AbstractIndividual">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -146,7 +180,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf4" source="nid_http://www.opengis.net/ont/gml#GeometricComplex" target="nid_http://www.opengis.net/ont/gml#AbstractGeometry">
+    <edge id="eid_rdfs:subClassOf6" source="nid_http://www.opengis.net/ont/gml#GeometricComplex" target="nid_http://www.opengis.net/ont/gml#AbstractGeometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -181,7 +215,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf5" source="nid_sf:MultiPolygon" target="nid_sf:MultiSurface">
+    <edge id="eid_rdfs:subClassOf7" source="nid_sf:MultiPolygon" target="nid_sf:MultiSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -216,7 +250,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf6" source="nid_seas:AverageEvaluation" target="nid_seas:Evaluation">
+    <edge id="eid_rdfs:subClassOf8" source="nid_seas:AverageEvaluation" target="nid_seas:Evaluation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -251,7 +285,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf7" source="nid_sf:MultiPoint" target="nid_sf:GeometryCollection">
+    <edge id="eid_rdfs:subClassOf9" source="nid_sf:MultiPoint" target="nid_sf:GeometryCollection">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -286,7 +320,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf8" source="nid_http://www.opengis.net/ont/gml#GeodesicString" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+    <edge id="eid_rdfs:subClassOf10" source="nid_http://www.opengis.net/ont/gml#GeodesicString" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -309,7 +343,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf9" source="nid_http://www.opengis.net/ont/gml#ArcStringByBulge" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+    <edge id="eid_rdfs:subClassOf11" source="nid_http://www.opengis.net/ont/gml#ArcStringByBulge" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -344,7 +378,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf10" source="nid_http://www.opengis.net/ont/gml#Solid" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
+    <edge id="eid_rdfs:subClassOf12" source="nid_http://www.opengis.net/ont/gml#Solid" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -355,31 +389,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Quality">
+      <node id="nid_gufo@en:Quality">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="120.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="150.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Quality</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Quality</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:IntrinsicAspect">
+      <node id="nid_gufo@en:IntrinsicAspect">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="200.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="230.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:IntrinsicAspect</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:IntrinsicAspect</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf11" source="nid_gufo:Quality" target="nid_gufo:IntrinsicAspect">
+    <edge id="eid_rdfs:subClassOf13" source="nid_gufo@en:Quality" target="nid_gufo@en:IntrinsicAspect">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -402,19 +436,19 @@
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:Perdurants">
+      <node id="nid_5fb2a8ac:18c173552b1:-7f66">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="150.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Perdurants</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">5fb2a8ac:18c173552b1:-7f66</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf12" source="nid_propaphen:PhenomenonOccurrence" target="nid_gufo:Perdurants">
+    <edge id="eid_rdfs:subClassOf14" source="nid_propaphen:PhenomenonOccurrence" target="nid_5fb2a8ac:18c173552b1:-7f66">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -449,7 +483,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf13" source="nid_sf:LineString" target="nid_sf:Curve">
+    <edge id="eid_rdfs:subClassOf15" source="nid_sf:LineString" target="nid_sf:Curve">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -472,7 +506,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf14" source="nid_seas:MaximumEvaluation" target="nid_seas:Evaluation">
+    <edge id="eid_rdfs:subClassOf16" source="nid_seas:MaximumEvaluation" target="nid_seas:Evaluation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -495,19 +529,19 @@
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:Object">
+      <node id="nid_gufo@en:Object">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="110.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Object</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Object</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf15" source="nid_geosparql:SpatialObject" target="nid_gufo:Object">
+    <edge id="eid_rdfs:subClassOf17" source="nid_geosparql:SpatialObject" target="nid_gufo@en:Object">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -542,7 +576,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf16" source="nid_http://www.opengis.net/ont/gml#CompositeSurface" target="nid_http://www.opengis.net/ont/gml#OrientableSurface">
+    <edge id="eid_rdfs:subClassOf18" source="nid_http://www.opengis.net/ont/gml#CompositeSurface" target="nid_http://www.opengis.net/ont/gml#OrientableSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -565,7 +599,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf17" source="nid_http://www.opengis.net/ont/gml#CompositeSurface" target="nid_http://www.opengis.net/ont/gml#Composite">
+    <edge id="eid_rdfs:subClassOf19" source="nid_http://www.opengis.net/ont/gml#CompositeSurface" target="nid_http://www.opengis.net/ont/gml#Composite">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -600,7 +634,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf18" source="nid_skos:OrderedCollection" target="nid_skos:Collection">
+    <edge id="eid_rdfs:subClassOf20" source="nid_skos:OrderedCollection" target="nid_skos:Collection">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -635,7 +669,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf19" source="nid_http://www.opengis.net/ont/gml#Tin" target="nid_http://www.opengis.net/ont/gml#TriangulatedSurface">
+    <edge id="eid_rdfs:subClassOf21" source="nid_http://www.opengis.net/ont/gml#Tin" target="nid_http://www.opengis.net/ont/gml#TriangulatedSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -646,31 +680,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:TemporaryInstantiationSituation">
+      <node id="nid_gufo@en:TemporaryInstantiationSituation">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="360.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="390.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:TemporaryInstantiationSituation</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:TemporaryInstantiationSituation</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:Situation">
+      <node id="nid_gufo@en:Situation">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Situation</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Situation</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf20" source="nid_gufo:TemporaryInstantiationSituation" target="nid_gufo:Situation">
+    <edge id="eid_rdfs:subClassOf22" source="nid_gufo@en:TemporaryInstantiationSituation" target="nid_gufo@en:Situation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -705,7 +739,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf21" source="nid_time:DayOfWeek" target="nid_owl:Thing">
+    <edge id="eid_rdfs:subClassOf23" source="nid_time:DayOfWeek" target="nid_owl:Thing">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -728,7 +762,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf22" source="nid_http://www.opengis.net/ont/gml#Geodesic" target="nid_http://www.opengis.net/ont/gml#GeodesicString">
+    <edge id="eid_rdfs:subClassOf24" source="nid_http://www.opengis.net/ont/gml#Geodesic" target="nid_http://www.opengis.net/ont/gml#GeodesicString">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -751,7 +785,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf23" source="nid_time:Interval" target="nid_time:TemporalEntity">
+    <edge id="eid_rdfs:subClassOf25" source="nid_time:Interval" target="nid_time:TemporalEntity">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -774,7 +808,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf24" source="nid_http://www.opengis.net/ont/gml#Point" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
+    <edge id="eid_rdfs:subClassOf26" source="nid_http://www.opengis.net/ont/gml#Point" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -797,7 +831,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf25" source="nid_sf:Curve" target="nid_sf:Geometry">
+    <edge id="eid_rdfs:subClassOf27" source="nid_sf:Curve" target="nid_sf:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -808,19 +842,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Scene">
+      <node id="nid_gufo@en:Scene">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="100.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="130.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Scene</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Scene</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf26" source="nid_gufo:Scene" target="nid_gufo:Perdurants">
+      <node id="nid_gufo@en:Perdurants">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Perdurants</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf28" source="nid_gufo@en:Scene" target="nid_gufo@en:Perdurants">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -855,7 +901,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf27" source="nid_http://www.opengis.net/ont/gml#AbstractSurfacePatch" target="nid_geosparql:Geometry">
+    <edge id="eid_rdfs:subClassOf29" source="nid_http://www.opengis.net/ont/gml#AbstractSurfacePatch" target="nid_geosparql:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -866,31 +912,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:ComplexEvent">
+      <node id="nid_gufo@en:ComplexEvent">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="200.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:ComplexEvent</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ComplexEvent</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:Event">
+      <node id="nid_gufo@en:Event">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="100.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="130.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Event</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Event</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf28" source="nid_gufo:ComplexEvent" target="nid_gufo:Event">
+    <edge id="eid_rdfs:subClassOf30" source="nid_gufo@en:ComplexEvent" target="nid_gufo@en:Event">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -925,7 +971,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf29" source="nid_http://www.opengis.net/ont/gml#Polygon" target="nid_http://www.opengis.net/ont/gml#Surface">
+    <edge id="eid_rdfs:subClassOf31" source="nid_http://www.opengis.net/ont/gml#Polygon" target="nid_http://www.opengis.net/ont/gml#Surface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -960,7 +1006,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf30" source="nid_http://www.opengis.net/ont/gml#BSpline" target="nid_http://www.opengis.net/ont/gml#SplineCurve">
+    <edge id="eid_rdfs:subClassOf32" source="nid_http://www.opengis.net/ont/gml#BSpline" target="nid_http://www.opengis.net/ont/gml#SplineCurve">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -983,7 +1029,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf31" source="nid_sf:Surface" target="nid_sf:Geometry">
+    <edge id="eid_rdfs:subClassOf33" source="nid_sf:Surface" target="nid_sf:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1006,7 +1052,19 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf32" source="nid_propaphen:Phenomenon" target="nid_gufo:Perdurants">
+      <node id="nid_5fb2a8ac:18c173552b1:-7f6e">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">5fb2a8ac:18c173552b1:-7f6e</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf34" source="nid_propaphen:Phenomenon" target="nid_5fb2a8ac:18c173552b1:-7f6e">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1029,7 +1087,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf33" source="nid_seas:Connection" target="nid_gufo:Perdurants">
+    <edge id="eid_rdfs:subClassOf35" source="nid_seas:Connection" target="nid_gufo@en:Perdurants">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1040,19 +1098,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_185b79651e97b4d0a86ce1212ea76c37">
+      <node id="nid_542b7f71e39f05bfa79ceca082ba7092">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">185b79651e97b4d0a86ce1212ea76c37</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">542b7f71e39f05bfa79ceca082ba7092</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf34" source="nid_seas:Connection" target="nid_185b79651e97b4d0a86ce1212ea76c37">
+    <edge id="eid_rdfs:subClassOf36" source="nid_seas:Connection" target="nid_542b7f71e39f05bfa79ceca082ba7092">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1063,19 +1121,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_f80f4bdc6b09f033f54660fc6ffff2c1">
+      <node id="nid_ff8f00da2b7ed40eaaf59bb98b6f3dab">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">f80f4bdc6b09f033f54660fc6ffff2c1</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">ff8f00da2b7ed40eaaf59bb98b6f3dab</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf35" source="nid_seas:Connection" target="nid_f80f4bdc6b09f033f54660fc6ffff2c1">
+    <edge id="eid_rdfs:subClassOf37" source="nid_seas:Connection" target="nid_ff8f00da2b7ed40eaaf59bb98b6f3dab">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1098,7 +1156,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf36" source="nid_seas:Connection" target="nid_seas:FeatureOfInterest">
+    <edge id="eid_rdfs:subClassOf38" source="nid_seas:Connection" target="nid_seas:FeatureOfInterest">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1133,7 +1191,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf37" source="nid_http://www.opengis.net/ont/gml#Circle" target="nid_http://www.opengis.net/ont/gml#Arc">
+    <edge id="eid_rdfs:subClassOf39" source="nid_http://www.opengis.net/ont/gml#Circle" target="nid_http://www.opengis.net/ont/gml#Arc">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1144,31 +1202,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:QualityValueAttributionSituation">
+      <node id="nid_gufo@en:QualityValueAttributionSituation">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="370.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="400.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:QualityValueAttributionSituation</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:QualityValueAttributionSituation</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_71db083d:18c064c3dc5:-7fc6">
+      <node id="nid_5fb2a8ac:18c173552b1:-7fc6">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">71db083d:18c064c3dc5:-7fc6</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">5fb2a8ac:18c173552b1:-7fc6</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf38" source="nid_gufo:QualityValueAttributionSituation" target="nid_71db083d:18c064c3dc5:-7fc6">
+    <edge id="eid_rdfs:subClassOf40" source="nid_gufo@en:QualityValueAttributionSituation" target="nid_5fb2a8ac:18c173552b1:-7fc6">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1179,7 +1237,30 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf39" source="nid_gufo:QualityValueAttributionSituation" target="nid_gufo:Situation">
+    <edge id="eid_rdfs:subClassOf41" source="nid_gufo@en:QualityValueAttributionSituation" target="nid_gufo@en:Situation">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_11616e7d6970bbb6fa4a6e379010d19e">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">11616e7d6970bbb6fa4a6e379010d19e</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf42" source="nid_gufo@en:QualityValueAttributionSituation" target="nid_11616e7d6970bbb6fa4a6e379010d19e">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1214,7 +1295,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf40" source="nid_time:DateTimeInterval" target="nid_time:ProperInterval">
+    <edge id="eid_rdfs:subClassOf43" source="nid_time:DateTimeInterval" target="nid_time:ProperInterval">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1237,19 +1318,19 @@
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_ea69ffa3bb9eceebe9f21b2c22251ae5">
+      <node id="nid_dbaee08c5c7ad83ae4ccf49298874c52">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">ea69ffa3bb9eceebe9f21b2c22251ae5</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">dbaee08c5c7ad83ae4ccf49298874c52</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf41" source="nid_seas:Property" target="nid_ea69ffa3bb9eceebe9f21b2c22251ae5">
+    <edge id="eid_rdfs:subClassOf44" source="nid_seas:Property" target="nid_dbaee08c5c7ad83ae4ccf49298874c52">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1284,7 +1365,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf42" source="nid_http://www.opengis.net/ont/gml#MultiSurface" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
+    <edge id="eid_rdfs:subClassOf45" source="nid_http://www.opengis.net/ont/gml#MultiSurface" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1319,7 +1400,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf43" source="nid_time:GeneralDateTimeDescription" target="nid_time:TemporalPosition">
+    <edge id="eid_rdfs:subClassOf46" source="nid_time:GeneralDateTimeDescription" target="nid_time:TemporalPosition">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1342,7 +1423,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf44" source="nid_sf:MultiCurve" target="nid_sf:GeometryCollection">
+    <edge id="eid_rdfs:subClassOf47" source="nid_sf:MultiCurve" target="nid_sf:GeometryCollection">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1353,19 +1434,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Aspect">
+      <node id="nid_gufo@en:Aspect">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="110.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Aspect</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Aspect</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf45" source="nid_gufo:IntrinsicAspect" target="nid_gufo:Aspect">
+    <edge id="eid_rdfs:subClassOf48" source="nid_gufo@en:IntrinsicAspect" target="nid_gufo@en:Aspect">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1400,7 +1481,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf46" source="nid_http://www.opengis.net/ont/gml#CircleByCenterPoint" target="nid_http://www.opengis.net/ont/gml#ArcByCenterPoint">
+    <edge id="eid_rdfs:subClassOf49" source="nid_http://www.opengis.net/ont/gml#CircleByCenterPoint" target="nid_http://www.opengis.net/ont/gml#ArcByCenterPoint">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1411,7 +1492,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf47" source="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive" target="nid_http://www.opengis.net/ont/gml#AbstractGeometry">
+    <edge id="eid_rdfs:subClassOf50" source="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive" target="nid_http://www.opengis.net/ont/gml#AbstractGeometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1434,7 +1515,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf48" source="nid_sf:PolyhedralSurface" target="nid_sf:Surface">
+    <edge id="eid_rdfs:subClassOf51" source="nid_sf:PolyhedralSurface" target="nid_sf:Surface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1469,7 +1550,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf49" source="nid_time:MonthOfYear" target="nid_time:DateTimeDescription">
+    <edge id="eid_rdfs:subClassOf52" source="nid_time:MonthOfYear" target="nid_time:DateTimeDescription">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1504,7 +1585,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf50" source="nid_sf:Envelope" target="nid_sf:Polygon">
+    <edge id="eid_rdfs:subClassOf53" source="nid_sf:Envelope" target="nid_sf:Polygon">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1527,7 +1608,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf51" source="nid_http://www.opengis.net/ont/gml#MultiPoint" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
+    <edge id="eid_rdfs:subClassOf54" source="nid_http://www.opengis.net/ont/gml#MultiPoint" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1538,31 +1619,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Relator">
+      <node id="nid_gufo@en:Relator">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="120.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="150.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Relator</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Relator</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:ExtrinsicAspect">
+      <node id="nid_gufo@en:ExtrinsicAspect">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="200.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="230.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:ExtrinsicAspect</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ExtrinsicAspect</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf52" source="nid_gufo:Relator" target="nid_gufo:ExtrinsicAspect">
+    <edge id="eid_rdfs:subClassOf55" source="nid_gufo@en:Relator" target="nid_gufo@en:ExtrinsicAspect">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1573,31 +1654,54 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:EventType">
+      <node id="nid_gufo@en:EventType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:EventType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:EventType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:PerdurantType">
+      <node id="nid_gufo@en:PerdurantType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:PerdurantType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:PerdurantType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf53" source="nid_gufo:EventType" target="nid_gufo:PerdurantType">
+    <edge id="eid_rdfs:subClassOf56" source="nid_gufo@en:EventType" target="nid_gufo@en:PerdurantType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:ConcreteIndividualType">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="300.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ConcreteIndividualType</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf57" source="nid_gufo@en:EventType" target="nid_gufo@en:ConcreteIndividualType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1620,7 +1724,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf54" source="nid_http://www.opengis.net/ont/gml#PolygonPatch" target="nid_http://www.opengis.net/ont/gml#AbstractSurfacePatch">
+    <edge id="eid_rdfs:subClassOf58" source="nid_http://www.opengis.net/ont/gml#PolygonPatch" target="nid_http://www.opengis.net/ont/gml#AbstractSurfacePatch">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1631,19 +1735,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Quantity">
+      <node id="nid_gufo@en:Quantity">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="130.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="160.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Quantity</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Quantity</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf55" source="nid_gufo:Quantity" target="nid_gufo:Object">
+    <edge id="eid_rdfs:subClassOf59" source="nid_gufo@en:Quantity" target="nid_gufo@en:Object">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1654,19 +1758,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:TemporaryConstitutionSituation">
+      <node id="nid_gufo@en:TemporaryConstitutionSituation">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="350.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="380.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:TemporaryConstitutionSituation</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:TemporaryConstitutionSituation</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf56" source="nid_gufo:TemporaryConstitutionSituation" target="nid_gufo:Situation">
+    <edge id="eid_rdfs:subClassOf60" source="nid_gufo@en:TemporaryConstitutionSituation" target="nid_gufo@en:Situation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1689,7 +1793,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf57" source="nid_http://www.opengis.net/ont/gml#Rectangle" target="nid_http://www.opengis.net/ont/gml#PolygonPatch">
+    <edge id="eid_rdfs:subClassOf61" source="nid_http://www.opengis.net/ont/gml#Rectangle" target="nid_http://www.opengis.net/ont/gml#PolygonPatch">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1700,19 +1804,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Entity">
+      <node id="nid_gufo@en:Entity">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="110.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Entity</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Entity</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf58" source="nid_gufo:AbstractEntity" target="nid_gufo:Entity">
+    <edge id="eid_rdfs:subClassOf62" source="nid_gufo@en:AbstractEntity" target="nid_gufo@en:Entity">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1723,7 +1827,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf59" source="nid_time:DateTimeDescription" target="nid_time:GeneralDateTimeDescription">
+    <edge id="eid_rdfs:subClassOf63" source="nid_time:DateTimeDescription" target="nid_time:GeneralDateTimeDescription">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1734,7 +1838,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf60" source="nid_time:ProperInterval" target="nid_time:Interval">
+    <edge id="eid_rdfs:subClassOf64" source="nid_time:ProperInterval" target="nid_time:Interval">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1769,7 +1873,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf61" source="nid_http://www.opengis.net/ont/gml#LineString" target="nid_http://www.opengis.net/ont/gml#LineStringSegment">
+    <edge id="eid_rdfs:subClassOf65" source="nid_http://www.opengis.net/ont/gml#LineString" target="nid_http://www.opengis.net/ont/gml#LineStringSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1792,7 +1896,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf62" source="nid_http://www.opengis.net/ont/gml#AbstractParametricCurveSurface" target="nid_http://www.opengis.net/ont/gml#AbstractSurfacePatch">
+    <edge id="eid_rdfs:subClassOf66" source="nid_http://www.opengis.net/ont/gml#AbstractParametricCurveSurface" target="nid_http://www.opengis.net/ont/gml#AbstractSurfacePatch">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1827,7 +1931,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf63" source="nid_http://www.opengis.net/ont/gml#Sphere" target="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface">
+    <edge id="eid_rdfs:subClassOf67" source="nid_http://www.opengis.net/ont/gml#Sphere" target="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1850,7 +1954,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf64" source="nid_http://www.opengis.net/ont/gml#PolynomialSpline" target="nid_http://www.opengis.net/ont/gml#SplineCurve">
+    <edge id="eid_rdfs:subClassOf68" source="nid_http://www.opengis.net/ont/gml#PolynomialSpline" target="nid_http://www.opengis.net/ont/gml#SplineCurve">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1861,31 +1965,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:ComparativeRelationshipType">
+      <node id="nid_gufo@en:ComparativeRelationshipType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="350.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:ComparativeRelationshipType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ComparativeRelationshipType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:RelationshipType">
+      <node id="nid_gufo@en:RelationshipType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="240.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:RelationshipType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:RelationshipType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf65" source="nid_gufo:ComparativeRelationshipType" target="nid_gufo:RelationshipType">
+    <edge id="eid_rdfs:subClassOf69" source="nid_gufo@en:ComparativeRelationshipType" target="nid_gufo@en:RelationshipType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1896,31 +2000,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:NonSortal">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:NonSortal</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-      <node id="nid_gufo:EndurantType">
+      <node id="nid_gufo@en:NonSortal">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:EndurantType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:NonSortal</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf66" source="nid_gufo:NonSortal" target="nid_gufo:EndurantType">
+      <node id="nid_gufo@en:EndurantType">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="200.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:EndurantType</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf70" source="nid_gufo@en:NonSortal" target="nid_gufo@en:EndurantType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1931,31 +2035,31 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Phase">
+      <node id="nid_gufo@en:Phase">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="100.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="130.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Phase</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Phase</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:Sortal">
+      <node id="nid_gufo@en:Sortal">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="110.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Sortal</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Sortal</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf67" source="nid_gufo:Phase" target="nid_gufo:Sortal">
+    <edge id="eid_rdfs:subClassOf71" source="nid_gufo@en:Phase" target="nid_gufo@en:Sortal">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1966,19 +2070,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:AntiRigidType">
+      <node id="nid_gufo@en:AntiRigidType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:AntiRigidType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:AntiRigidType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf68" source="nid_gufo:Phase" target="nid_gufo:AntiRigidType">
+    <edge id="eid_rdfs:subClassOf72" source="nid_gufo@en:Phase" target="nid_gufo@en:AntiRigidType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -1989,7 +2093,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf69" source="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface" target="nid_http://www.opengis.net/ont/gml#AbstractParametricCurveSurface">
+    <edge id="eid_rdfs:subClassOf73" source="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface" target="nid_http://www.opengis.net/ont/gml#AbstractParametricCurveSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2000,19 +2104,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:ConcreteEntityType">
+      <node id="nid_gufo@en:ConcreteEntityType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="230.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:ConcreteEntityType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ConcreteEntityType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf70" source="nid_gufo:PerdurantType" target="nid_gufo:ConcreteEntityType">
+    <edge id="eid_rdfs:subClassOf74" source="nid_gufo@en:PerdurantType" target="nid_gufo@en:ConcreteEntityType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2047,7 +2151,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf71" source="nid_seas:ConnectionPoint" target="nid_geosparql:Feature">
+    <edge id="eid_rdfs:subClassOf75" source="nid_seas:ConnectionPoint" target="nid_geosparql:Feature">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2058,19 +2162,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_140b8c8356acbffbb001a1dbdd599b13">
+      <node id="nid_e26233da2481174e60786bb9657fc17e">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">140b8c8356acbffbb001a1dbdd599b13</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">e26233da2481174e60786bb9657fc17e</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf72" source="nid_seas:ConnectionPoint" target="nid_140b8c8356acbffbb001a1dbdd599b13">
+    <edge id="eid_rdfs:subClassOf76" source="nid_seas:ConnectionPoint" target="nid_e26233da2481174e60786bb9657fc17e">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2081,7 +2185,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf73" source="nid_seas:ConnectionPoint" target="nid_seas:FeatureOfInterest">
+    <edge id="eid_rdfs:subClassOf77" source="nid_seas:ConnectionPoint" target="nid_seas:FeatureOfInterest">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2092,7 +2196,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf74" source="nid_http://www.opengis.net/ont/gml#AbstractGeometry" target="nid_geosparql:Geometry">
+    <edge id="eid_rdfs:subClassOf78" source="nid_http://www.opengis.net/ont/gml#AbstractGeometry" target="nid_geosparql:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2103,19 +2207,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:FunctionalComplex">
+      <node id="nid_gufo@en:FunctionalComplex">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="220.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="250.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:FunctionalComplex</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:FunctionalComplex</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf75" source="nid_gufo:FunctionalComplex" target="nid_gufo:Object">
+    <edge id="eid_rdfs:subClassOf79" source="nid_gufo@en:FunctionalComplex" target="nid_gufo@en:Object">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2126,19 +2230,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:AtomicEvent">
+      <node id="nid_gufo@en:AtomicEvent">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="160.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="190.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:AtomicEvent</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:AtomicEvent</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf76" source="nid_gufo:AtomicEvent" target="nid_gufo:Event">
+    <edge id="eid_rdfs:subClassOf80" source="nid_gufo@en:AtomicEvent" target="nid_gufo@en:Event">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2161,7 +2265,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf77" source="nid_http://www.opengis.net/ont/gml#Clothoid" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+    <edge id="eid_rdfs:subClassOf81" source="nid_http://www.opengis.net/ont/gml#Clothoid" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2196,7 +2300,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf78" source="nid_http://www.opengis.net/ont/gml#Ring" target="nid_http://www.opengis.net/ont/gml#CompositeCurve">
+    <edge id="eid_rdfs:subClassOf82" source="nid_http://www.opengis.net/ont/gml#Ring" target="nid_http://www.opengis.net/ont/gml#CompositeCurve">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2207,31 +2311,54 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Endurant">
+      <node id="nid_gufo@en:Endurant">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="130.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="160.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Endurant</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Endurant</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:ConcreteEntity">
+      <node id="nid_gufo@en:ConcreteEntity">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="190.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="220.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:ConcreteEntity</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ConcreteEntity</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf79" source="nid_gufo:Endurant" target="nid_gufo:ConcreteEntity">
+    <edge id="eid_rdfs:subClassOf83" source="nid_gufo@en:Endurant" target="nid_gufo@en:ConcreteEntity">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:ConcreteIndividual">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ConcreteIndividual</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf84" source="nid_gufo@en:Endurant" target="nid_gufo@en:ConcreteIndividual">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2254,7 +2381,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf80" source="nid_http://www.opengis.net/ont/gml#Cylinder" target="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface">
+    <edge id="eid_rdfs:subClassOf85" source="nid_http://www.opengis.net/ont/gml#Cylinder" target="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2265,19 +2392,42 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Collection">
+      <node id="nid_gufo@en:Collection">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Collection</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf86" source="nid_gufo@en:Collection" target="nid_gufo@en:Object">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:History">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="150.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Collection</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:History</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf81" source="nid_gufo:Collection" target="nid_gufo:Object">
+    <edge id="eid_rdfs:subClassOf87" source="nid_gufo@en:History" target="nid_gufo@en:Perdurants">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2288,19 +2438,7 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:History">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="120.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:History</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_rdfs:subClassOf82" source="nid_gufo:History" target="nid_gufo:Perdurants">
+    <edge id="eid_rdfs:subClassOf88" source="nid_gufo@en:Event" target="nid_gufo@en:Perdurants">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2311,7 +2449,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf83" source="nid_gufo:Event" target="nid_gufo:Perdurants">
+    <edge id="eid_rdfs:subClassOf89" source="nid_gufo@en:Event" target="nid_gufo@en:ConcreteIndividual">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2322,7 +2460,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf84" source="nid_http://www.opengis.net/ont/gml#MultiGeometry" target="nid_http://www.opengis.net/ont/gml#AbstractGeometry">
+    <edge id="eid_rdfs:subClassOf90" source="nid_http://www.opengis.net/ont/gml#MultiGeometry" target="nid_http://www.opengis.net/ont/gml#AbstractGeometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2345,7 +2483,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf85" source="nid_http://www.opengis.net/ont/gml#PolyhedralSurface" target="nid_http://www.opengis.net/ont/gml#Surface">
+    <edge id="eid_rdfs:subClassOf91" source="nid_http://www.opengis.net/ont/gml#PolyhedralSurface" target="nid_http://www.opengis.net/ont/gml#Surface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2356,7 +2494,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf86" source="nid_gufo:Aspect" target="nid_gufo:Endurant">
+    <edge id="eid_rdfs:subClassOf92" source="nid_gufo@en:Aspect" target="nid_gufo@en:Endurant">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2367,7 +2505,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf87" source="nid_http://www.opengis.net/ont/gml#LineStringSegment" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+    <edge id="eid_rdfs:subClassOf93" source="nid_http://www.opengis.net/ont/gml#LineStringSegment" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2402,7 +2540,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf88" source="nid_time:GeneralDurationDescription" target="nid_time:TemporalDuration">
+    <edge id="eid_rdfs:subClassOf94" source="nid_time:GeneralDurationDescription" target="nid_time:TemporalDuration">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2437,7 +2575,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf89" source="nid_pep:ProcedureExecutor" target="nid_seas:System">
+    <edge id="eid_rdfs:subClassOf95" source="nid_pep:ProcedureExecutor" target="nid_seas:System">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2448,7 +2586,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf90" source="nid_gufo:EndurantType" target="nid_gufo:ConcreteEntityType">
+    <edge id="eid_rdfs:subClassOf96" source="nid_gufo@en:EndurantType" target="nid_gufo@en:ConcreteEntityType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2459,19 +2597,41 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:SituationType">
+    <edge id="eid_rdfs:subClassOf97" source="nid_gufo@en:EndurantType" target="nid_gufo@en:ConcreteIndividualType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:SituationType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:SituationType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:SituationType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf91" source="nid_gufo:SituationType" target="nid_gufo:PerdurantType">
+    <edge id="eid_rdfs:subClassOf98" source="nid_gufo@en:SituationType" target="nid_gufo@en:PerdurantType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf99" source="nid_gufo@en:SituationType" target="nid_gufo@en:ConcreteIndividualType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2494,7 +2654,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf92" source="nid_http://www.opengis.net/ont/gml#MultiCurve" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
+    <edge id="eid_rdfs:subClassOf100" source="nid_http://www.opengis.net/ont/gml#MultiCurve" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2505,7 +2665,42 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf93" source="nid_http://www.opengis.net/ont/gml#SplineCurve" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+      <node id="nid_gufo@en:AbstractIndividualType">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="300.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:AbstractIndividualType</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+      <node id="nid_gufo@en:Type">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="120.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Type</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf101" source="nid_gufo@en:AbstractIndividualType" target="nid_gufo@en:Type">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf102" source="nid_http://www.opengis.net/ont/gml#SplineCurve" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2528,7 +2723,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf94" source="nid_http://www.opengis.net/ont/gml#Cone" target="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface">
+    <edge id="eid_rdfs:subClassOf103" source="nid_http://www.opengis.net/ont/gml#Cone" target="nid_http://www.opengis.net/ont/gml#AbstractGriddedSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2539,7 +2734,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf95" source="nid_http://www.opengis.net/ont/gml#OrientableSurface" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
+    <edge id="eid_rdfs:subClassOf104" source="nid_http://www.opengis.net/ont/gml#OrientableSurface" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2562,7 +2757,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf96" source="nid_seas:BalanceEvaluation" target="nid_seas:Evaluation">
+    <edge id="eid_rdfs:subClassOf105" source="nid_seas:BalanceEvaluation" target="nid_seas:Evaluation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2573,19 +2768,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:NonRigidType">
+      <node id="nid_gufo@en:NonRigidType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="200.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:NonRigidType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:NonRigidType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf97" source="nid_gufo:NonRigidType" target="nid_gufo:EndurantType">
+    <edge id="eid_rdfs:subClassOf106" source="nid_gufo@en:NonRigidType" target="nid_gufo@en:EndurantType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2608,7 +2803,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf98" source="nid_time:TemporalUnit" target="nid_time:TemporalDuration">
+    <edge id="eid_rdfs:subClassOf107" source="nid_time:TemporalUnit" target="nid_time:TemporalDuration">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2619,7 +2814,18 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf99" source="nid_gufo:Situation" target="nid_gufo:Perdurants">
+    <edge id="eid_rdfs:subClassOf108" source="nid_gufo@en:Situation" target="nid_gufo@en:Perdurants">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf109" source="nid_gufo@en:Situation" target="nid_gufo@en:ConcreteIndividual">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2642,7 +2848,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf100" source="nid_sf:MultiLineString" target="nid_sf:MultiCurve">
+    <edge id="eid_rdfs:subClassOf110" source="nid_sf:MultiLineString" target="nid_sf:MultiCurve">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2653,144 +2859,167 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:SemiRigidType">
+      <node id="nid_gufo@en:SemiRigidType">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:SemiRigidType</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf111" source="nid_gufo@en:SemiRigidType" target="nid_gufo@en:NonRigidType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf112" source="nid_sf:Polygon" target="nid_sf:Surface">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf113" source="nid_time:DurationDescription" target="nid_time:GeneralDurationDescription">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:Category">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="160.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Category</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+      <node id="nid_gufo@en:RigidType">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:RigidType</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf114" source="nid_gufo@en:Category" target="nid_gufo@en:RigidType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf115" source="nid_gufo@en:Category" target="nid_gufo@en:NonSortal">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:RoleMixin">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="170.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:RoleMixin</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf116" source="nid_gufo@en:RoleMixin" target="nid_gufo@en:NonSortal">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf117" source="nid_gufo@en:RoleMixin" target="nid_gufo@en:AntiRigidType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:MaterialRelationshipType">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:MaterialRelationshipType</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf118" source="nid_gufo@en:MaterialRelationshipType" target="nid_gufo@en:RelationshipType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+      <node id="nid_gufo@en:Individual">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:SemiRigidType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Individual</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf101" source="nid_gufo:SemiRigidType" target="nid_gufo:NonRigidType">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-    <edge id="eid_rdfs:subClassOf102" source="nid_sf:Polygon" target="nid_sf:Surface">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-    <edge id="eid_rdfs:subClassOf103" source="nid_time:DurationDescription" target="nid_time:GeneralDurationDescription">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-      <node id="nid_gufo:Category">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="130.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Category</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-      <node id="nid_gufo:RigidType">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:RigidType</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_rdfs:subClassOf104" source="nid_gufo:Category" target="nid_gufo:RigidType">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-    <edge id="eid_rdfs:subClassOf105" source="nid_gufo:Category" target="nid_gufo:NonSortal">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-      <node id="nid_gufo:RoleMixin">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="140.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:RoleMixin</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_rdfs:subClassOf106" source="nid_gufo:RoleMixin" target="nid_gufo:NonSortal">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-    <edge id="eid_rdfs:subClassOf107" source="nid_gufo:RoleMixin" target="nid_gufo:AntiRigidType">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-      <node id="nid_gufo:MaterialRelationshipType">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="290.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:MaterialRelationshipType</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_rdfs:subClassOf108" source="nid_gufo:MaterialRelationshipType" target="nid_gufo:RelationshipType">
+    <edge id="eid_rdfs:subClassOf119" source="nid_gufo@en:AbstractIndividual" target="nid_gufo@en:Individual">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2813,7 +3042,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf109" source="nid_sf:LinearRing" target="nid_sf:LineString">
+    <edge id="eid_rdfs:subClassOf120" source="nid_sf:LinearRing" target="nid_sf:LineString">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2836,7 +3065,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf110" source="nid_time:January" target="nid_time:DateTimeDescription">
+    <edge id="eid_rdfs:subClassOf121" source="nid_time:January" target="nid_time:DateTimeDescription">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2847,19 +3076,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:TemporaryParthoodSituation">
+      <node id="nid_gufo@en:TemporaryParthoodSituation">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="310.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="340.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:TemporaryParthoodSituation</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:TemporaryParthoodSituation</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf111" source="nid_gufo:TemporaryParthoodSituation" target="nid_gufo:Situation">
+    <edge id="eid_rdfs:subClassOf122" source="nid_gufo@en:TemporaryParthoodSituation" target="nid_gufo@en:Situation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2870,7 +3099,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf112" source="nid_sf:GeometryCollection" target="nid_sf:Geometry">
+    <edge id="eid_rdfs:subClassOf123" source="nid_sf:GeometryCollection" target="nid_sf:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2881,7 +3110,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf113" source="nid_gufo:ConcreteEntity" target="nid_gufo:Entity">
+    <edge id="eid_rdfs:subClassOf124" source="nid_gufo@en:ConcreteEntity" target="nid_gufo@en:Entity">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2892,19 +3121,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Participation">
+      <node id="nid_gufo@en:Participation">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Participation</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Participation</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf114" source="nid_gufo:Participation" target="nid_gufo:Event">
+    <edge id="eid_rdfs:subClassOf125" source="nid_gufo@en:Participation" target="nid_gufo@en:Event">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2927,7 +3156,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf115" source="nid_http://www.opengis.net/ont/gml#ArcByBulge" target="nid_http://www.opengis.net/ont/gml#ArcStringByBulge">
+    <edge id="eid_rdfs:subClassOf126" source="nid_http://www.opengis.net/ont/gml#ArcByBulge" target="nid_http://www.opengis.net/ont/gml#ArcStringByBulge">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2950,7 +3179,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf116" source="nid_http://www.opengis.net/ont/gml#CompositeCurve" target="nid_http://www.opengis.net/ont/gml#OrientableCurve">
+    <edge id="eid_rdfs:subClassOf127" source="nid_http://www.opengis.net/ont/gml#CompositeCurve" target="nid_http://www.opengis.net/ont/gml#OrientableCurve">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2961,7 +3190,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf117" source="nid_http://www.opengis.net/ont/gml#CompositeCurve" target="nid_http://www.opengis.net/ont/gml#Composite">
+    <edge id="eid_rdfs:subClassOf128" source="nid_http://www.opengis.net/ont/gml#CompositeCurve" target="nid_http://www.opengis.net/ont/gml#Composite">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2972,7 +3201,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf118" source="nid_sf:MultiSurface" target="nid_sf:GeometryCollection">
+    <edge id="eid_rdfs:subClassOf129" source="nid_sf:MultiSurface" target="nid_sf:GeometryCollection">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -2983,31 +3212,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:AbstractEntityType">
+      <node id="nid_gufo@en:AbstractEntityType">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="230.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:AbstractEntityType</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:AbstractEntityType</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_gufo:Type">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="90.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Type</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
-         </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_rdfs:subClassOf119" source="nid_gufo:AbstractEntityType" target="nid_gufo:Type">
+    <edge id="eid_rdfs:subClassOf130" source="nid_gufo@en:AbstractEntityType" target="nid_gufo@en:Type">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3030,7 +3247,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf120" source="nid_http://www.opengis.net/ont/gml#MultiSolid" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
+    <edge id="eid_rdfs:subClassOf131" source="nid_http://www.opengis.net/ont/gml#MultiSolid" target="nid_http://www.opengis.net/ont/gml#MultiGeometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3065,7 +3282,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf121" source="nid_geosparql:FeatureCollection" target="nid_geosparql:SpatialObjectCollection">
+    <edge id="eid_rdfs:subClassOf132" source="nid_geosparql:FeatureCollection" target="nid_geosparql:SpatialObjectCollection">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3076,19 +3293,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:ExtrinsicMode">
+      <node id="nid_gufo@en:ExtrinsicMode">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:ExtrinsicMode</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:ExtrinsicMode</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf122" source="nid_gufo:ExtrinsicMode" target="nid_gufo:ExtrinsicAspect">
+    <edge id="eid_rdfs:subClassOf133" source="nid_gufo@en:ExtrinsicMode" target="nid_gufo@en:ExtrinsicAspect">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3111,7 +3328,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf123" source="nid_http://www.opengis.net/ont/gml#Bezier" target="nid_http://www.opengis.net/ont/gml#BSpline">
+    <edge id="eid_rdfs:subClassOf134" source="nid_http://www.opengis.net/ont/gml#Bezier" target="nid_http://www.opengis.net/ont/gml#BSpline">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3122,19 +3339,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Role">
+      <node id="nid_gufo@en:Role">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="90.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="120.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Role</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Role</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf124" source="nid_gufo:Role" target="nid_gufo:Sortal">
+    <edge id="eid_rdfs:subClassOf135" source="nid_gufo@en:Role" target="nid_gufo@en:Sortal">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3145,7 +3362,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf125" source="nid_gufo:Role" target="nid_gufo:AntiRigidType">
+    <edge id="eid_rdfs:subClassOf136" source="nid_gufo@en:Role" target="nid_gufo@en:AntiRigidType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3168,7 +3385,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf126" source="nid_time:Duration" target="nid_time:TemporalDuration">
+    <edge id="eid_rdfs:subClassOf137" source="nid_time:Duration" target="nid_time:TemporalDuration">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3179,7 +3396,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf127" source="nid_http://www.opengis.net/ont/gml#Composite" target="nid_http://www.opengis.net/ont/gml#GeometricComplex">
+    <edge id="eid_rdfs:subClassOf138" source="nid_http://www.opengis.net/ont/gml#Composite" target="nid_http://www.opengis.net/ont/gml#GeometricComplex">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3190,7 +3407,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf128" source="nid_http://www.opengis.net/ont/gml#ArcByCenterPoint" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+    <edge id="eid_rdfs:subClassOf139" source="nid_http://www.opengis.net/ont/gml#ArcByCenterPoint" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3213,7 +3430,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf129" source="nid_geosparql:SpatialObjectCollection" target="nid_rdfs:Container">
+    <edge id="eid_rdfs:subClassOf140" source="nid_geosparql:SpatialObjectCollection" target="nid_rdfs:Container">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3224,7 +3441,18 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf130" source="nid_time:TemporalEntity" target="nid_owl:Thing">
+    <edge id="eid_rdfs:subClassOf141" source="nid_gufo@en:ConcreteIndividualType" target="nid_gufo@en:Type">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf142" source="nid_time:TemporalEntity" target="nid_owl:Thing">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3247,7 +3475,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf131" source="nid_http://www.opengis.net/ont/gml#Arc" target="nid_http://www.opengis.net/ont/gml#ArcString">
+    <edge id="eid_rdfs:subClassOf143" source="nid_http://www.opengis.net/ont/gml#Arc" target="nid_http://www.opengis.net/ont/gml#ArcString">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3258,7 +3486,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf132" source="nid_gufo:RelationshipType" target="nid_gufo:Type">
+    <edge id="eid_rdfs:subClassOf144" source="nid_gufo@en:RelationshipType" target="nid_gufo@en:Type">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3269,19 +3497,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:Kind">
+      <node id="nid_gufo@en:Kind">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="90.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="120.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Kind</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Kind</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf133" source="nid_gufo:Kind" target="nid_gufo:Sortal">
+    <edge id="eid_rdfs:subClassOf145" source="nid_gufo@en:Kind" target="nid_gufo@en:Sortal">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3292,7 +3520,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf134" source="nid_gufo:Kind" target="nid_gufo:RigidType">
+    <edge id="eid_rdfs:subClassOf146" source="nid_gufo@en:Kind" target="nid_gufo@en:RigidType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3303,7 +3531,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf135" source="nid_http://www.opengis.net/ont/gml#ArcString" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+    <edge id="eid_rdfs:subClassOf147" source="nid_http://www.opengis.net/ont/gml#ArcString" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3326,7 +3554,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf136" source="nid_http://www.opengis.net/ont/gml#Shell" target="nid_http://www.opengis.net/ont/gml#CompositeSurface">
+    <edge id="eid_rdfs:subClassOf148" source="nid_http://www.opengis.net/ont/gml#Shell" target="nid_http://www.opengis.net/ont/gml#CompositeSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3349,7 +3577,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf137" source="nid_sf:Line" target="nid_sf:LineString">
+    <edge id="eid_rdfs:subClassOf149" source="nid_sf:Line" target="nid_sf:LineString">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3372,7 +3600,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf138" source="nid_sf:TIN" target="nid_sf:PolyhedralSurface">
+    <edge id="eid_rdfs:subClassOf150" source="nid_sf:TIN" target="nid_sf:PolyhedralSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3383,7 +3611,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf139" source="nid_sf:Geometry" target="nid_geosparql:Geometry">
+    <edge id="eid_rdfs:subClassOf151" source="nid_sf:Geometry" target="nid_geosparql:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3394,7 +3622,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf140" source="nid_http://www.opengis.net/ont/gml#Surface" target="nid_http://www.opengis.net/ont/gml#OrientableSurface">
+    <edge id="eid_rdfs:subClassOf152" source="nid_http://www.opengis.net/ont/gml#Surface" target="nid_http://www.opengis.net/ont/gml#OrientableSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3405,7 +3633,18 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf141" source="nid_http://www.opengis.net/ont/gml#Surface" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
+    <edge id="eid_rdfs:subClassOf153" source="nid_http://www.opengis.net/ont/gml#Surface" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf154" source="nid_gufo@en:ConcreteIndividual" target="nid_gufo@en:Individual">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3428,7 +3667,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf142" source="nid_geosparql:GeometryCollection" target="nid_geosparql:SpatialObjectCollection">
+    <edge id="eid_rdfs:subClassOf155" source="nid_geosparql:GeometryCollection" target="nid_geosparql:SpatialObjectCollection">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3451,7 +3690,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf143" source="nid_http://www.opengis.net/ont/gml#CompositeSolid" target="nid_http://www.opengis.net/ont/gml#Solid">
+    <edge id="eid_rdfs:subClassOf156" source="nid_http://www.opengis.net/ont/gml#CompositeSolid" target="nid_http://www.opengis.net/ont/gml#Solid">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3462,7 +3701,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf144" source="nid_http://www.opengis.net/ont/gml#CompositeSolid" target="nid_http://www.opengis.net/ont/gml#Composite">
+    <edge id="eid_rdfs:subClassOf157" source="nid_http://www.opengis.net/ont/gml#CompositeSolid" target="nid_http://www.opengis.net/ont/gml#Composite">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3485,7 +3724,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf145" source="nid_http://www.opengis.net/ont/gml#LinearRing" target="nid_http://www.opengis.net/ont/gml#Ring">
+    <edge id="eid_rdfs:subClassOf158" source="nid_http://www.opengis.net/ont/gml#LinearRing" target="nid_http://www.opengis.net/ont/gml#Ring">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3496,19 +3735,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:SubKind">
+      <node id="nid_gufo@en:SubKind">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="120.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="150.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:SubKind</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:SubKind</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf146" source="nid_gufo:SubKind" target="nid_gufo:Sortal">
+    <edge id="eid_rdfs:subClassOf159" source="nid_gufo@en:SubKind" target="nid_gufo@en:Sortal">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3519,7 +3758,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf147" source="nid_gufo:SubKind" target="nid_gufo:RigidType">
+    <edge id="eid_rdfs:subClassOf160" source="nid_gufo@en:SubKind" target="nid_gufo@en:RigidType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3530,7 +3769,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf148" source="nid_gufo:Perdurants" target="nid_gufo:ConcreteEntity">
+    <edge id="eid_rdfs:subClassOf161" source="nid_gufo@en:Perdurants" target="nid_gufo@en:ConcreteEntity">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3553,30 +3792,19 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf149" source="nid_propaphen:Observation" target="nid_gufo:Perdurants">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-      <node id="nid_gufo:Mixin">
+      <node id="nid_5fb2a8ac:18c173552b1:-7f78">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="100.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:Mixin</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">5fb2a8ac:18c173552b1:-7f78</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf150" source="nid_gufo:Mixin" target="nid_gufo:SemiRigidType">
+    <edge id="eid_rdfs:subClassOf162" source="nid_propaphen:Observation" target="nid_5fb2a8ac:18c173552b1:-7f78">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3587,7 +3815,30 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf151" source="nid_gufo:Mixin" target="nid_gufo:NonSortal">
+      <node id="nid_gufo@en:Mixin">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="130.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:Mixin</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf163" source="nid_gufo@en:Mixin" target="nid_gufo@en:SemiRigidType">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf164" source="nid_gufo@en:Mixin" target="nid_gufo@en:NonSortal">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3610,7 +3861,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf152" source="nid_http://www.opengis.net/ont/gml#Triangle" target="nid_http://www.opengis.net/ont/gml#PolygonPatch">
+    <edge id="eid_rdfs:subClassOf165" source="nid_http://www.opengis.net/ont/gml#Triangle" target="nid_http://www.opengis.net/ont/gml#PolygonPatch">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3633,7 +3884,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf153" source="nid_http://www.opengis.net/ont/gml#OffsetCurve" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
+    <edge id="eid_rdfs:subClassOf166" source="nid_http://www.opengis.net/ont/gml#OffsetCurve" target="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3656,7 +3907,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf154" source="nid_http://www.opengis.net/ont/gml#Curve" target="nid_http://www.opengis.net/ont/gml#OrientableCurve">
+    <edge id="eid_rdfs:subClassOf167" source="nid_http://www.opengis.net/ont/gml#Curve" target="nid_http://www.opengis.net/ont/gml#OrientableCurve">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3667,7 +3918,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf155" source="nid_http://www.opengis.net/ont/gml#Curve" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
+    <edge id="eid_rdfs:subClassOf168" source="nid_http://www.opengis.net/ont/gml#Curve" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3690,7 +3941,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf156" source="nid_seas:MinimumEvaluation" target="nid_seas:Evaluation">
+    <edge id="eid_rdfs:subClassOf169" source="nid_seas:MinimumEvaluation" target="nid_seas:Evaluation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3713,7 +3964,19 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf157" source="nid_propaphen:Presence" target="nid_gufo:Perdurants">
+      <node id="nid_5fb2a8ac:18c173552b1:-7f5c">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">5fb2a8ac:18c173552b1:-7f5c</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf170" source="nid_propaphen:Presence" target="nid_5fb2a8ac:18c173552b1:-7f5c">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3724,7 +3987,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf158" source="nid_gufo:ConcreteEntityType" target="nid_gufo:Type">
+    <edge id="eid_rdfs:subClassOf171" source="nid_gufo@en:ConcreteEntityType" target="nid_gufo@en:Type">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3735,7 +3998,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf159" source="nid_gufo:RigidType" target="nid_gufo:EndurantType">
+    <edge id="eid_rdfs:subClassOf172" source="nid_gufo@en:RigidType" target="nid_gufo@en:EndurantType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3758,19 +4021,19 @@
          </data>
          <data key="d1" />
       </node>
-      <node id="nid_71db083d:18c064c3dc5:-7f84">
+      <node id="nid_5fb2a8ac:18c173552b1:-7f84">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">71db083d:18c064c3dc5:-7f84</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">5fb2a8ac:18c173552b1:-7f84</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf160" source="nid_time:TimePosition" target="nid_71db083d:18c064c3dc5:-7f84">
+    <edge id="eid_rdfs:subClassOf173" source="nid_time:TimePosition" target="nid_5fb2a8ac:18c173552b1:-7f84">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3781,7 +4044,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf161" source="nid_time:TimePosition" target="nid_time:TemporalPosition">
+    <edge id="eid_rdfs:subClassOf174" source="nid_time:TimePosition" target="nid_time:TemporalPosition">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3792,19 +4055,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_2ad7a569fe9791a670b98b813e6ac8d1">
+      <node id="nid_8dec92d2af7dacdd1aabdc9af4430f88">
          <data key="d0">
             <y:ShapeNode>
                <y:Geometry height="30.0" width="320.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">2ad7a569fe9791a670b98b813e6ac8d1</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">8dec92d2af7dacdd1aabdc9af4430f88</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf162" source="nid_time:TimePosition" target="nid_2ad7a569fe9791a670b98b813e6ac8d1">
+    <edge id="eid_rdfs:subClassOf175" source="nid_time:TimePosition" target="nid_8dec92d2af7dacdd1aabdc9af4430f88">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3827,7 +4090,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf163" source="nid_http://www.opengis.net/ont/gml#CubicSpline" target="nid_http://www.opengis.net/ont/gml#PolynomialSpline">
+    <edge id="eid_rdfs:subClassOf176" source="nid_http://www.opengis.net/ont/gml#CubicSpline" target="nid_http://www.opengis.net/ont/gml#PolynomialSpline">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3838,7 +4101,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf164" source="nid_gufo:Object" target="nid_gufo:Endurant">
+    <edge id="eid_rdfs:subClassOf177" source="nid_gufo@en:Object" target="nid_gufo@en:Endurant">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3849,7 +4112,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf165" source="nid_geosparql:Feature" target="nid_geosparql:SpatialObject">
+    <edge id="eid_rdfs:subClassOf178" source="nid_geosparql:Feature" target="nid_geosparql:SpatialObject">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3860,7 +4123,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf166" source="nid_gufo:Sortal" target="nid_gufo:EndurantType">
+    <edge id="eid_rdfs:subClassOf179" source="nid_gufo@en:Sortal" target="nid_gufo@en:EndurantType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3871,41 +4134,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:IntrinsicMode">
+      <node id="nid_gufo@en:IntrinsicMode">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="210.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:IntrinsicMode</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:IntrinsicMode</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf167" source="nid_gufo:IntrinsicMode" target="nid_gufo:IntrinsicAspect">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-    <edge id="eid_rdfs:subClassOf168" source="nid_seas:System" target="nid_geosparql:Feature">
-         <data key="d2">
-            <y:PolyLineEdge>
-               <y:LineStyle color="black" type="line" width="1.0" />
-               <y:Arrows source="none" target="normal" />
-               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
-               <y:BendStyle smoothed="false" />
-            </y:PolyLineEdge>
-         </data>
-         <data key="d3" />
-      </edge>
-    <edge id="eid_rdfs:subClassOf169" source="nid_seas:System" target="nid_seas:FeatureOfInterest">
+    <edge id="eid_rdfs:subClassOf180" source="nid_gufo@en:IntrinsicMode" target="nid_gufo@en:IntrinsicAspect">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3928,7 +4169,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf170" source="nid_sf:Triangle" target="nid_sf:Polygon">
+    <edge id="eid_rdfs:subClassOf181" source="nid_sf:Triangle" target="nid_sf:Polygon">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3939,19 +4180,18 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:VariableCollection">
-         <data key="d0">
-            <y:ShapeNode>
-               <y:Geometry height="30.0" width="230.0" x="0.0" y="0.0" />
-               <y:Fill color="#000000" transparent="false" />
-               <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:VariableCollection</y:NodeLabel>
-               <y:Shape type="rectangle" />
-            </y:ShapeNode>
+    <edge id="eid_rdfs:subClassOf182" source="nid_seas:System" target="nid_geosparql:Feature">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
          </data>
-         <data key="d1" />
-      </node>
-    <edge id="eid_rdfs:subClassOf171" source="nid_gufo:VariableCollection" target="nid_gufo:Collection">
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf183" source="nid_seas:System" target="nid_seas:FeatureOfInterest">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3974,7 +4214,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf172" source="nid_sf:Point" target="nid_sf:Geometry">
+    <edge id="eid_rdfs:subClassOf184" source="nid_sf:Point" target="nid_sf:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -3985,7 +4225,30 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf173" source="nid_gufo:AntiRigidType" target="nid_gufo:NonRigidType">
+      <node id="nid_gufo@en:VariableCollection">
+         <data key="d0">
+            <y:ShapeNode>
+               <y:Geometry height="30.0" width="260.0" x="0.0" y="0.0" />
+               <y:Fill color="#000000" transparent="false" />
+               <y:BorderStyle color="#000000" type="line" width="1.0" />
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:VariableCollection</y:NodeLabel>
+               <y:Shape type="rectangle" />
+            </y:ShapeNode>
+         </data>
+         <data key="d1" />
+      </node>
+    <edge id="eid_rdfs:subClassOf185" source="nid_gufo@en:VariableCollection" target="nid_gufo@en:Collection">
+         <data key="d2">
+            <y:PolyLineEdge>
+               <y:LineStyle color="black" type="line" width="1.0" />
+               <y:Arrows source="none" target="normal" />
+               <y:EdgeLabel alignment="center" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="six_pos" modelPosition="tail" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true">rdfs:subClassOf</y:EdgeLabel>
+               <y:BendStyle smoothed="false" />
+            </y:PolyLineEdge>
+         </data>
+         <data key="d3" />
+      </edge>
+    <edge id="eid_rdfs:subClassOf186" source="nid_gufo@en:AntiRigidType" target="nid_gufo@en:NonRigidType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4008,7 +4271,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf174" source="nid_seas:IncomingEvaluation" target="nid_seas:Evaluation">
+    <edge id="eid_rdfs:subClassOf187" source="nid_seas:IncomingEvaluation" target="nid_seas:Evaluation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4019,19 +4282,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:FixedCollection">
+      <node id="nid_gufo@en:FixedCollection">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="200.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="230.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:FixedCollection</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:FixedCollection</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf175" source="nid_gufo:FixedCollection" target="nid_gufo:Collection">
+    <edge id="eid_rdfs:subClassOf188" source="nid_gufo@en:FixedCollection" target="nid_gufo@en:Collection">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4054,7 +4317,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf176" source="nid_seas:PercentageProperty" target="nid_seas:Property">
+    <edge id="eid_rdfs:subClassOf189" source="nid_seas:PercentageProperty" target="nid_seas:Property">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4065,7 +4328,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf177" source="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment" target="nid_geosparql:Geometry">
+    <edge id="eid_rdfs:subClassOf190" source="nid_http://www.opengis.net/ont/gml#AbstractCurveSegment" target="nid_geosparql:Geometry">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4076,7 +4339,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf178" source="nid_gufo:ExtrinsicAspect" target="nid_gufo:Aspect">
+    <edge id="eid_rdfs:subClassOf191" source="nid_gufo@en:ExtrinsicAspect" target="nid_gufo@en:Aspect">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4099,7 +4362,7 @@
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf179" source="nid_seas:OutgoingEvaluation" target="nid_seas:Evaluation">
+    <edge id="eid_rdfs:subClassOf192" source="nid_seas:OutgoingEvaluation" target="nid_seas:Evaluation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4110,7 +4373,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf180" source="nid_http://www.opengis.net/ont/gml#OrientableCurve" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
+    <edge id="eid_rdfs:subClassOf193" source="nid_http://www.opengis.net/ont/gml#OrientableCurve" target="nid_http://www.opengis.net/ont/gml#AbstractGeometricPrimitive">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4121,7 +4384,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf181" source="nid_http://www.opengis.net/ont/gml#TriangulatedSurface" target="nid_http://www.opengis.net/ont/gml#PolyhedralSurface">
+    <edge id="eid_rdfs:subClassOf194" source="nid_http://www.opengis.net/ont/gml#TriangulatedSurface" target="nid_http://www.opengis.net/ont/gml#PolyhedralSurface">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4132,19 +4395,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:TemporaryRelationshipSituation">
+      <node id="nid_gufo@en:TemporaryRelationshipSituation">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="350.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="380.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:TemporaryRelationshipSituation</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:TemporaryRelationshipSituation</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf182" source="nid_gufo:TemporaryRelationshipSituation" target="nid_gufo:Situation">
+    <edge id="eid_rdfs:subClassOf195" source="nid_gufo@en:TemporaryRelationshipSituation" target="nid_gufo@en:Situation">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4155,7 +4418,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf183" source="nid_geosparql:Geometry" target="nid_geosparql:SpatialObject">
+    <edge id="eid_rdfs:subClassOf196" source="nid_geosparql:Geometry" target="nid_geosparql:SpatialObject">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4166,19 +4429,19 @@
          </data>
          <data key="d3" />
       </edge>
-      <node id="nid_gufo:PhaseMixin">
+      <node id="nid_gufo@en:PhaseMixin">
          <data key="d0">
             <y:ShapeNode>
-               <y:Geometry height="30.0" width="150.0" x="0.0" y="0.0" />
+               <y:Geometry height="30.0" width="180.0" x="0.0" y="0.0" />
                <y:Fill color="#000000" transparent="false" />
                <y:BorderStyle color="#000000" type="line" width="1.0" />
-               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo:PhaseMixin</y:NodeLabel>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" modelName="internal" modelPosition="c" textColor="#000000" visible="true">gufo@en:PhaseMixin</y:NodeLabel>
                <y:Shape type="rectangle" />
             </y:ShapeNode>
          </data>
          <data key="d1" />
       </node>
-    <edge id="eid_rdfs:subClassOf184" source="nid_gufo:PhaseMixin" target="nid_gufo:NonSortal">
+    <edge id="eid_rdfs:subClassOf197" source="nid_gufo@en:PhaseMixin" target="nid_gufo@en:NonSortal">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
@@ -4189,7 +4452,7 @@
          </data>
          <data key="d3" />
       </edge>
-    <edge id="eid_rdfs:subClassOf185" source="nid_gufo:PhaseMixin" target="nid_gufo:AntiRigidType">
+    <edge id="eid_rdfs:subClassOf198" source="nid_gufo@en:PhaseMixin" target="nid_gufo@en:AntiRigidType">
          <data key="d2">
             <y:PolyLineEdge>
                <y:LineStyle color="black" type="line" width="1.0" />
