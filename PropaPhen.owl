@@ -188,6 +188,7 @@ I.e. A phen:PhenomenonOccurence &quot;Occurence of a Hurricane in Paris&quot; is
     <!-- https://w3id.org/def/propaphen#hasPresence -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/propaphen#hasPresence">
+        <owl:inverseOf rdf:resource="https://w3id.org/def/propaphen#presenceOf"/>
         <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Entity"/>
         <rdfs:range rdf:resource="https://w3id.org/def/propaphen#Presence"/>
         <rdfs:comment>Relates an instance of gufo:Individual/entity to its spatiotemporal presence.</rdfs:comment>
@@ -262,6 +263,17 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     
 
 
+    <!-- https://w3id.org/def/propaphen#presenceOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/def/propaphen#presenceOf">
+        <rdfs:domain rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Entity"/>
+        <rdfs:comment>Presence Of</rdfs:comment>
+        <rdfs:comment>Relates an instance of propaphe:Presence with the Individual/entity spatiotemporally present.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/def/propaphen#spatialPresenceIn -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/def/propaphen#spatialPresenceIn">
@@ -295,7 +307,26 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     <!-- https://w3id.org/def/propaphen#Observation -->
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#Observation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#observationOf"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As a propagation phenomenon is still a general phenomenon (&quot;
             Smith, David Woodruff. « Phenomenology ». The Stanford Encyclopedia of Philosophy, édité par Edward N. Zalta, Summer 2018, Metaphysics Research Lab, Stanford University, 2018. Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/archives/sum2018/entries/phenomenology/.
             &quot;), different points of view or observations may result in different experiences. A phen:Observation is a gufo:Perdurant that represents a spatial-temporal perspective of a phen:PhenomenonOccurrence (i.e., two observations from different people may differ in the number of details one can give).
@@ -311,7 +342,22 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     <!-- https://w3id.org/def/propaphen#Phenomenon -->
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#Phenomenon">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is based on the meaning of the Propagation Phenomenon presented by &quot;Król, Dariusz, Damien Fay, et Bogdan Gabryś, éd. Propagation Phenomena in Real World Networks. Vol. 85. Intelligent Systems Reference Library. Cham: Springer International Publishing, 2015. https://doi.org/10.1007/978-3-319-15916-4.&quot;
         A phenomenon is a gufo:Perdurant that defines a fact or event of scientific interest susceptible to scientific description and explanation (Merriam-Webster dictionary). It does not define the occurrence of a phenomenon but the study of a type of it (i.e., Epidemic phenomena such as COVID-19, Influenza, etc.). As the mentioned phenomena, the study of a phenomenon may only be valid from the first occurrence of it until the last occurrence of it.</rdfs:comment>
         <rdfs:label>Propagation Phenomenon Type</rdfs:label>
@@ -322,7 +368,27 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     <!-- https://w3id.org/def/propaphen#PhenomenonOccurrence -->
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#PhenomenonOccurrence">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#fromPhenomenon"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gufo:Perdurant that represents the occurrence of a phen:Phenomenon. Similar to the concept of the occurrence of information being propagated in the social information propagation phenomenon on &quot;Król, Dariusz, Damien Fay, et Bogdan Gabryś, éd. Propagation Phenomena in Real World Networks. Vol. 85. Intelligent Systems Reference Library. Cham: Springer International Publishing, 2015. https://doi.org/10.1007/978-3-319-15916-4.&quot;. Another example would be an outburst in a network from a particular virus type.
 
         For example, the occurrence of a hurricane in Paris is different from the occurrence of a hurricane in the United States if they are happening simultaneously. Therefore, they are two different instances of phen:PhenomenonOccurrence of the same phen:Phenomenon (Hurricane).</rdfs:comment>
@@ -334,7 +400,30 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     <!-- https://w3id.org/def/propaphen#Presence -->
 
     <owl:Class rdf:about="https://w3id.org/def/propaphen#Presence">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Perdurants"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Perdurants"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#Phenomenon"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#observationalPresenceIn"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/def/propaphen#presenceOf"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/nemo/gufo#Entity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gufo:Perdurant whose sole purpose is to identify the presence of instances of gufo:Individual in a node of the network or, consequently, in a phen:Observation for a given time interval.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presence of entities in a network node</rdfs:label>
     </owl:Class>
@@ -373,6 +462,15 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- https://w3id.org/def/propaphen#Mickel -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#Mickel">
+        <rdf:type rdf:resource="http://purl.org/nemo/gufo#Object"/>
+        <propaphen:hasPresence rdf:resource="https://w3id.org/def/propaphen#pr1"/>
+    </owl:NamedIndividual>
     
 
 
@@ -467,7 +565,6 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
 
     <owl:NamedIndividual rdf:about="https://w3id.org/def/propaphen#s1">
         <rdf:type rdf:resource="https://w3id.org/seas/System"/>
-        <propaphen:happensIn rdf:resource="https://w3id.org/def/propaphen#s1"/>
         <seas:connectedTo rdf:resource="https://w3id.org/def/propaphen#s3"/>
     </owl:NamedIndividual>
     
@@ -545,26 +642,6 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#Observation"/>
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#Phenomenon"/>
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#PhenomenonOccurrence"/>
-            <rdf:Description rdf:about="https://w3id.org/def/propaphen#Presence"/>
-        </owl:members>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Rules
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -614,6 +691,343 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If presence of cluster of individuals happens in one spatial region SO2, it must also happen in a region containing it (SO1):</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1.3 - Presence SO nttp</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.opengis.net/ont/geosparql#rcc8ntpp"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If presence of cluster of individuals happens in one spatial region SO2, it must also happen in a region containing it (SO1)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1.1 - Presence SO ttp</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.opengis.net/ont/geosparql#rcc8tpp"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presence of group of Individuals in both node/system and observation (eq contains)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S4.6 - Pr in Obs (eq contains)</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.w3.org/2006/time#intervalContains"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Observation"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="https://w3id.org/seas/System"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/S1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI2"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#happensIn"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
+                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/S1"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
+                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                                <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Presence"/>
+                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
+                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI2"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                        <rdf:first>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                                <swrl:propertyPredicate rdf:resource="http://www.opengis.net/ont/geosparql#rcc8eq"/>
+                                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
+                                                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/S1"/>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:first>
+                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#observationalPresenceIn"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
@@ -1122,89 +1536,6 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
                         <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#observationalPresenceIn"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associates end point with beginning of time interval</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s3.2 - time interval end</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#Instant"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://purl.org/nemo/gufo#ConcreteEntity"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://purl.org/nemo/gufo#hasEndPoint"/>
-                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
-                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.w3.org/2006/time#hasEnd"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -1898,6 +2229,172 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associates begin point with beginning of time interval</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s3.1 - time interval beginning</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://purl.org/nemo/gufo#ConcreteEntity"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://purl.org/nemo/gufo#hasBeginPoint"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.w3.org/2006/time#hasBeginning"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associates end point with beginning of time interval</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s3.2 - time interval end</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#Instant"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://purl.org/nemo/gufo#ConcreteEntity"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://purl.org/nemo/gufo#hasEndPoint"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.w3.org/2006/time#hasEnd"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associates begin point with beginning of time interval</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s3.3 - inverse time interval beginning</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
@@ -2138,426 +2635,6 @@ I.e. &quot;Vacines&quot;, &quot;Pantients of COVID-19&quot; and &quot;Pneumonia&
                         <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
                         <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
                         <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Associates begin point with beginning of time interval</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s3.1 - time interval beginning</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#Instant"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://purl.org/nemo/gufo#ConcreteEntity"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://purl.org/nemo/gufo#hasBeginPoint"/>
-                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/GCE"/>
-                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.w3.org/2006/time#hasBeginning"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/t1"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If presence of cluster of individuals happens in one spatial region SO2, it must also happen in a region containing it (SO1):</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1.3 - Presence SO nttp</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.opengis.net/ont/geosparql#rcc8ntpp"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                        <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Presence"/>
-                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If presence of cluster of individuals happens in one spatial region SO2, it must also happen in a region containing it (SO1)</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1.1 - Presence SO ttp</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.opengis.net/ont/geosparql#rcc8tpp"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
-                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO1"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                        <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Presence"/>
-                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presence of group of Individuals in both node/system and observation (eq contains)</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S4.6 - Pr in Obs (eq contains)</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.w3.org/2006/time#intervalContains"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Observation"/>
-                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                        <swrl:classPredicate rdf:resource="https://w3id.org/seas/System"/>
-                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/S1"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                                <swrl:classPredicate rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI2"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                <rdf:first>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
-                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
-                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI1"/>
-                                                                    </rdf:Description>
-                                                                </rdf:first>
-                                                                <rdf:rest>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                        <rdf:first>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#happensIn"/>
-                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
-                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/S1"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:first>
-                                                                        <rdf:rest>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                <rdf:first>
-                                                                                    <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#spatialPresenceIn"/>
-                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                                                                                    </rdf:Description>
-                                                                                </rdf:first>
-                                                                                <rdf:rest>
-                                                                                    <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                        <rdf:first>
-                                                                                            <rdf:Description>
-                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                                                                <swrl:classPredicate rdf:resource="https://w3id.org/def/propaphen#Presence"/>
-                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                                                                                            </rdf:Description>
-                                                                                        </rdf:first>
-                                                                                        <rdf:rest>
-                                                                                            <rdf:Description>
-                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                <rdf:first>
-                                                                                                    <rdf:Description>
-                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#hasTimeInterval"/>
-                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PI2"/>
-                                                                                                    </rdf:Description>
-                                                                                                </rdf:first>
-                                                                                                <rdf:rest>
-                                                                                                    <rdf:Description>
-                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                                        <rdf:first>
-                                                                                                            <rdf:Description>
-                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                                                <swrl:propertyPredicate rdf:resource="http://www.opengis.net/ont/geosparql#rcc8eq"/>
-                                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/SO2"/>
-                                                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/S1"/>
-                                                                                                            </rdf:Description>
-                                                                                                        </rdf:first>
-                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                                                                    </rdf:Description>
-                                                                                                </rdf:rest>
-                                                                                            </rdf:Description>
-                                                                                        </rdf:rest>
-                                                                                    </rdf:Description>
-                                                                                </rdf:rest>
-                                                                            </rdf:Description>
-                                                                        </rdf:rest>
-                                                                    </rdf:Description>
-                                                                </rdf:rest>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://w3id.org/def/propaphen#observationalPresenceIn"/>
-                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/PR1"/>
-                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/O1"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>

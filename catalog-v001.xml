@@ -14,10 +14,10 @@
     <uri id="Imports Wizard Entry" name="http://purl.org/nemo/gufo#/1.0.0" uri="file:/home/alencga1/Documents/PreDiViD/git/predivid/code/Ontology/BaseOntologies/gufo/gufo.ttl"/>
     <uri id="Imports Wizard Entry" name="http://purl.org/nemo/gufo#/1.0.0" uri="file:/home/alencga1/Documents/PreDiViD/git/predivid/code/Ontology/BaseOntologies/gufo/gufo.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1700906336630" name="http://www.opengis.net/ont/geosparql" uri="CoreOntologies/geosparql_vocab_all.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1700906336630" name="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/" uri="CoreOntologies/PhenOWL.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1700906336630" name="https://w3id.org/def/phenowl/" uri="PhenOWL.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1700906336630" name="duplicate:https://w3id.org/seas/FeatureOfInterestOntology" uri="CoreOntologies/evaluationontology.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1700906336630" name="duplicate:https://w3id.org/seas/FeatureOfInterestOntology" uri="CoreOntologies/featureofinterestontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1701193421235" name="http://www.opengis.net/ont/geosparql" uri="CoreOntologies/geosparql_vocab_all.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1701193421235" name="http://www.semanticweb.org/alencga1/ontologies/2023/2/PhenOWL/" uri="CoreOntologies/PhenOWL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1701193421235" name="https://w3id.org/def/propaphen/" uri="PropaPhen.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1701193421235" name="duplicate:https://w3id.org/seas/FeatureOfInterestOntology" uri="CoreOntologies/evaluationontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1701193421235" name="duplicate:https://w3id.org/seas/FeatureOfInterestOntology" uri="CoreOntologies/featureofinterestontology.owl"/>
     </group>
 </catalog>
